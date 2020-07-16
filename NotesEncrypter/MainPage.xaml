@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:resources="clr-namespace:NotesEncrypter.Resx"
+             mc:Ignorable="d"
+             x:Class="NotesEncrypter.MainPage"
+             Title="Message Encrypter">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary"
+                     Priority="0"
+                     IconImageSource="share.png"
+                     Clicked="OnShareClicked" />
+        <ToolbarItem Order="Secondary"
+                     Text="Settings"
+                     Priority="1"
+                     Clicked="OnSettingsClicked" />
+    </ContentPage.ToolbarItems>
+    <StackLayout Orientation="Vertical">
+        <Label Text="{x:Static resources:AppResources.EnterMessage}" HorizontalOptions="StartAndExpand" />
+        <Entry x:Name="messageEntry" Placeholder="{x:Static resources:AppResources.EnterText}" />
+        <Label Text="{x:Static resources:AppResources.EnterKey}" HorizontalOptions="StartAndExpand" />
+        <Entry x:Name="keyEntry" Placeholder="{x:Static resources:AppResources.EnterText}" />
+        <Button Text="{x:Static resources:AppResources.Encrypt}" Clicked="HandleEncrypt" HorizontalOptions="Fill" />
+        <Button Text="{x:Static resources:AppResources.Decrypt}" Clicked="HandleDecrypt" HorizontalOptions="Fill" />
+    </StackLayout>
+</ContentPage>

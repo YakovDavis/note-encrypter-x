@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:resources="clr-namespace:NotesEncrypter.Resx"
+             mc:Ignorable="d"
+             x:Class="NotesEncrypter.SettingsPage"
+             Title="Settings">
+    <TableView Intent="Settings">
+          <TableRoot>
+              <TableSection Title="Symbol Table">
+                  <ViewCell>
+                      <StackLayout Orientation="Horizontal">
+                          <Label Text="Pick one" VerticalOptions="Center" HorizontalOptions="StartAndExpand"></Label>
+                          <Picker x:Name="picker"
+                                  Title="Symbol table"
+                                  TitleColor="Black"
+                                  HorizontalOptions="EndAndExpand">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Unicode</x:String>
+                                    <x:String>Basic</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                          </Picker>
+                      </StackLayout>
+                  </ViewCell>
+              </TableSection>
+          </TableRoot>
+      </TableView>
+</ContentPage>
