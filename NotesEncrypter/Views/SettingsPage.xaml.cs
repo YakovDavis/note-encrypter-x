@@ -6,10 +6,10 @@ namespace NotesEncrypter.Views
 {
     public partial class SettingsPage : ContentPage
     {
-        public SettingsPage()
+        public SettingsPage(MainViewModel _mainViewModel)
         {
             InitializeComponent();
-            BindingContext = new SettingsViewModel();
+            BindingContext = new SettingsViewModel(_mainViewModel);
         }
     }
 }

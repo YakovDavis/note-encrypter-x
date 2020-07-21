@@ -49,13 +49,18 @@ namespace NotesEncrypter.ViewModels
             if (Preferences.ContainsKey("symbol_table"))
                 encrypter.SetSymbolTable(Preferences.Get("symbol_table", "unicode"));
             else
-                Preferences.Set("symbol_table", "unicode");
+                Preferences.Set("symbol_table", "Unicode");
 
             EncryptCommand = new Command(Encrypt);
             DecryptCommand = new Command(Decrypt);
             SettingsCommand = new Command(OpenSettings);
         }
-        
+
+        public void ChangeSymbolTable(string name)
+        {
+            encrypter.SetSymbolTable(name);
+        }
+
         void Encrypt()
         {
             if (MessageText != null && KeyText != null)
@@ -68,6 +73,7 @@ namespace NotesEncrypter.ViewModels
                 MessageText = encrypter.Decrypt(MessageText, KeyText);
         }
 
+
         void ShareButtonHandler(object sender, System.EventArgs e)
         {
 
@@ -75,7 +81,7 @@ namespace NotesEncrypter.ViewModels
 
         void OpenSettings()
         {
-            Navigation.PushAsync(new SettingsPage());
+            Navigation.PushAsync(new SettingsPage(this));
         }
     }
 }

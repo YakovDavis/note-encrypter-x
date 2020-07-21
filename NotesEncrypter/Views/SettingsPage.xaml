@@ -12,10 +12,10 @@
               <TableSection Title="Symbol Table">
                   <ViewCell>
                       <StackLayout Orientation="Horizontal">
-                          <Picker ItemsSource="{Binding AvailableTables}"
-                                  ItemDisplayBinding="{Binding DisplayNames}"
+                          <Picker ItemsSource="{Binding SymbolTableNames}"
                                   SelectedItem="{Binding SelectedTable}"
-                                  HorizontalOptions="EndAndExpand">
+                                  Title="Select table"
+                                  HorizontalOptions="FillAndExpand">
                           </Picker>
                       </StackLayout>
                   </ViewCell>

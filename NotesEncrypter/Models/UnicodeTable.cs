@@ -5,8 +5,6 @@ namespace NotesEncrypter.Models
     {
         private const int LENGTH = 0xFFFF;
 
-        public override string DisplayName { get { return "Unicode"; } }
-
         public override int GetSize() => LENGTH;
 
         public override int IndexOf(char chr) => chr;

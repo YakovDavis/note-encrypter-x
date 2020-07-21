@@ -13,9 +13,10 @@ namespace NotesEncrypter.Models
 		public void SetSymbolTable(string name)
         {
 			switch (name)
-				{
+			{
+				case "Basic": symbolTable = new BasicTable(); break;
 				default: symbolTable = new UnicodeTable(); break;
-				}
+			}
         }
 
 		public string Encrypt(string str, string k)

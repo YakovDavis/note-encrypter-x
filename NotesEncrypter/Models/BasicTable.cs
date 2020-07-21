@@ -17,8 +17,6 @@ namespace NotesEncrypter.Models
             LENGTH = TABLE.Length;
         }
 
-        public override string DisplayName { get { return "Basic"; } }
-
         public override int GetSize() => LENGTH;
 
         public override int IndexOf(char chr) => TABLE.IndexOf(chr);
