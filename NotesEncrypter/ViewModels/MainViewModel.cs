@@ -6,6 +6,7 @@ using NotesEncrypter.Models;
 using Xamarin.Forms;
 using Xamarin.Essentials;
 using System.Threading.Tasks;
+using NotesEncrypter.Resx;
 
 namespace NotesEncrypter.ViewModels
 {
@@ -88,7 +89,7 @@ namespace NotesEncrypter.ViewModels
             await Share.RequestAsync(new ShareTextRequest
             {
                 Text = MessageText,
-                Title = "Share Message"
+                Title = AppResources.ShareMessage
             });
         }
 

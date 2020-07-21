@@ -13,30 +13,30 @@
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
     <data name="EnterMessage" xml:space="preserve">
-        <value>Message to encrypt/decrypt</value>
+        <value>Сообщение для шифрования/дешифрования</value>
     </data>
     <data name="EnterKey" xml:space="preserve">
-        <value>Key</value>
+        <value>Ключ</value>
     </data>
     <data name="EnterText" xml:space="preserve">
-        <value>Enter text</value>
+        <value>Введите текст</value>
     </data>
     <data name="Encrypt" xml:space="preserve">
-        <value>Encrypt</value>
+        <value>Зашифровать</value>
     </data>
     <data name="Decrypt" xml:space="preserve">
-        <value>Decrypt</value>
+        <value>Расшифровать</value>
     </data>
     <data name="SymbolTable" xml:space="preserve">
-        <value>Symbol table</value>
+        <value>Таблица символов</value>
     </data>
     <data name="SymbolTableSettings" xml:space="preserve">
-        <value>Symbol table settings</value>
+        <value>Настройки таблицы символов</value>
     </data>
     <data name="SelectTable" xml:space="preserve">
-        <value>Select table</value>
+        <value>Выберите таблицу</value>
     </data>
     <data name="ShareMessage" xml:space="preserve">
-        <value>Share message</value>
+        <value>Поделиться сообщением</value>
     </data>
 </root>

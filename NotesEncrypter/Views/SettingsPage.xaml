@@ -9,20 +9,20 @@
              Title="Settings">
     <TableView Intent="Settings">
           <TableRoot>
-              <TableSection Title="Symbol Table Settings">
+              <TableSection Title="{x:Static resources:AppResources.SymbolTableSettings}" >
                   <ViewCell>
                       <Grid>
                           <Grid.ColumnDefinitions>
                                <ColumnDefinition Width="*" />
                                <ColumnDefinition Width="*" />
                           </Grid.ColumnDefinitions>
-                          <Label Text="Symbol Table"
+                          <Label Text="{x:Static resources:AppResources.SymbolTable}"
                                   HorizontalOptions="Center"
                                   VerticalOptions="Center" />
                           <Picker Grid.Column="1"
                                   ItemsSource="{Binding SymbolTableNames}"
                                   SelectedItem="{Binding SelectedTable}"
-                                  Title="Select table"
+                                  Title="{x:Static resources:AppResources.SelectTable}"
                                   HorizontalOptions="Center"
                                   VerticalOptions="Center" >
                           </Picker>
