@@ -15,6 +15,7 @@ namespace NotesEncrypter.Models
 			switch (name)
 			{
 				case "Basic": symbolTable = new BasicTable(); break;
+				case "Extended": symbolTable = new ExtendedTable(); break;
 				default: symbolTable = new UnicodeTable(); break;
 			}
         }

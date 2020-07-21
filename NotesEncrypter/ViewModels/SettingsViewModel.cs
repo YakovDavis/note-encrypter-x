@@ -35,7 +35,8 @@ namespace NotesEncrypter.ViewModels
             symbolTableNames = new List<string>
             {
                 "Unicode",
-                "Basic"
+                "Basic",
+                "Extended"
             };
 
             _selectedTable = Preferences.Get("symbol_table", "Unicode");
