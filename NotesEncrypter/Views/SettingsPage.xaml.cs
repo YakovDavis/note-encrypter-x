@@ -1,20 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-
+using NotesEncrypter.ViewModels;
 using Xamarin.Forms;
 
-namespace NotesEncrypter
+namespace NotesEncrypter.Views
 {
     public partial class SettingsPage : ContentPage
     {
         public SettingsPage()
         {
             InitializeComponent();
-        }
-
-        void HandleSelectedTableChanged(object sender, System.EventArgs e)
-        {
-
+            BindingContext = new SettingsViewModel();
         }
     }
 }

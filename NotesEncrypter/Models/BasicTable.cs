@@ -1,5 +1,5 @@
 ﻿using System;
-namespace NotesEncrypter
+namespace NotesEncrypter.Models
 {
     public class BasicTable : SymbolTable
     {
@@ -16,6 +16,8 @@ namespace NotesEncrypter
 
             LENGTH = TABLE.Length;
         }
+
+        public override string DisplayName { get { return "Basic"; } }
 
         public override int GetSize() => LENGTH;
 

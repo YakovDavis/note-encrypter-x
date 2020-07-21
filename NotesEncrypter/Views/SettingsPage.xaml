@@ -5,24 +5,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:resources="clr-namespace:NotesEncrypter.Resx"
              mc:Ignorable="d"
-             x:Class="NotesEncrypter.SettingsPage"
+             x:Class="NotesEncrypter.Views.SettingsPage"
              Title="Settings">
     <TableView Intent="Settings">
           <TableRoot>
               <TableSection Title="Symbol Table">
                   <ViewCell>
                       <StackLayout Orientation="Horizontal">
-                          <Label Text="Pick one" VerticalOptions="Center" HorizontalOptions="StartAndExpand"></Label>
-                          <Picker x:Name="picker"
-                                  Title="Symbol table"
-                                  TitleColor="Black"
+                          <Picker ItemsSource="{Binding AvailableTables}"
+                                  ItemDisplayBinding="{Binding DisplayNames}"
+                                  SelectedItem="{Binding SelectedTable}"
                                   HorizontalOptions="EndAndExpand">
-                            <Picker.ItemsSource>
-                                <x:Array Type="{x:Type x:String}">
-                                    <x:String>Unicode</x:String>
-                                    <x:String>Basic</x:String>
-                                </x:Array>
-                            </Picker.ItemsSource>
                           </Picker>
                       </StackLayout>
                   </ViewCell>

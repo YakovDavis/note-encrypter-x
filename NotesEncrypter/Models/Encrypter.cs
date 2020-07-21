@@ -1,5 +1,5 @@
 ﻿using System;
-namespace NotesEncrypter
+namespace NotesEncrypter.Models
 {
 	public class Encrypter
 	{

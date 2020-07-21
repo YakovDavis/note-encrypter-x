@@ -5,24 +5,24 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:resources="clr-namespace:NotesEncrypter.Resx"
              mc:Ignorable="d"
-             x:Class="NotesEncrypter.MainPage"
+             x:Class="NotesEncrypter.Views.MainPage"
              Title="Message Encrypter">
     <ContentPage.ToolbarItems>
         <ToolbarItem Order="Primary"
                      Priority="0"
                      IconImageSource="share.png"
-                     Clicked="OnShareClicked" />
+                     Command="{Binding ShareButtonHandler}" />
         <ToolbarItem Order="Secondary"
                      Text="Settings"
                      Priority="1"
-                     Clicked="OnSettingsClicked" />
+                     Command="{Binding SettingsCommand}" />
     </ContentPage.ToolbarItems>
     <StackLayout Orientation="Vertical">
         <Label Text="{x:Static resources:AppResources.EnterMessage}" HorizontalOptions="StartAndExpand" />
-        <Entry x:Name="messageEntry" Placeholder="{x:Static resources:AppResources.EnterText}" />
+        <Entry Placeholder="{x:Static resources:AppResources.EnterText}" Text="{Binding MessageText, Mode=TwoWay}" />
         <Label Text="{x:Static resources:AppResources.EnterKey}" HorizontalOptions="StartAndExpand" />
-        <Entry x:Name="keyEntry" Placeholder="{x:Static resources:AppResources.EnterText}" />
-        <Button Text="{x:Static resources:AppResources.Encrypt}" Clicked="HandleEncrypt" HorizontalOptions="Fill" />
-        <Button Text="{x:Static resources:AppResources.Decrypt}" Clicked="HandleDecrypt" HorizontalOptions="Fill" />
+        <Entry Placeholder="{x:Static resources:AppResources.EnterText}"  Text="{Binding KeyText, Mode=TwoWay}" />
+        <Button Text="{x:Static resources:AppResources.Encrypt}" Command="{Binding EncryptCommand}" HorizontalOptions="Fill" />
+        <Button Text="{x:Static resources:AppResources.Decrypt}" Command="{Binding DecryptCommand}" HorizontalOptions="Fill" />
     </StackLayout>
 </ContentPage>

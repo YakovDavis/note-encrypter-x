@@ -1,9 +1,11 @@
 ﻿using System;
-namespace NotesEncrypter
+namespace NotesEncrypter.Models
 {
     public class UnicodeTable : SymbolTable
     {
         private const int LENGTH = 0xFFFF;
+
+        public override string DisplayName { get { return "Unicode"; } }
 
         public override int GetSize() => LENGTH;
 
