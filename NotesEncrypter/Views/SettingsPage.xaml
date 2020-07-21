@@ -9,15 +9,24 @@
              Title="Settings">
     <TableView Intent="Settings">
           <TableRoot>
-              <TableSection Title="Symbol Table">
+              <TableSection Title="Symbol Table Settings">
                   <ViewCell>
-                      <StackLayout Orientation="Horizontal">
-                          <Picker ItemsSource="{Binding SymbolTableNames}"
+                      <Grid>
+                          <Grid.ColumnDefinitions>
+                               <ColumnDefinition Width="*" />
+                               <ColumnDefinition Width="*" />
+                          </Grid.ColumnDefinitions>
+                          <Label Text="Symbol Table"
+                                  HorizontalOptions="Center"
+                                  VerticalOptions="Center" />
+                          <Picker Grid.Column="1"
+                                  ItemsSource="{Binding SymbolTableNames}"
                                   SelectedItem="{Binding SelectedTable}"
                                   Title="Select table"
-                                  HorizontalOptions="FillAndExpand">
+                                  HorizontalOptions="Center"
+                                  VerticalOptions="Center" >
                           </Picker>
-                      </StackLayout>
+                      </Grid>
                   </ViewCell>
               </TableSection>
           </TableRoot>

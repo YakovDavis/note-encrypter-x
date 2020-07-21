@@ -78,7 +78,9 @@ namespace NotesEncrypter.ViewModels
 
         void ShareMessage()
         {
-            _ = ShareMessageTask();
+            if (MessageText != null)
+                if (MessageText.Length > 0)
+                    _ = ShareMessageTask();
         }
 
         async Task ShareMessageTask()
