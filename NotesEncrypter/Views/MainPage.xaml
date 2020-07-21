@@ -11,10 +11,10 @@
         <ToolbarItem Order="Primary"
                      Priority="0"
                      IconImageSource="share.png"
-                     Command="{Binding ShareButtonHandler}" />
-        <ToolbarItem Order="Secondary"
-                     Text="Settings"
+                     Command="{Binding ShareCommand}" />
+        <ToolbarItem Order="Primary"
                      Priority="1"
+                     IconImageSource="settings.png"
                      Command="{Binding SettingsCommand}" />
     </ContentPage.ToolbarItems>
     <StackLayout Orientation="Vertical">

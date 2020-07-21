@@ -5,6 +5,7 @@ using NotesEncrypter.Views;
 using NotesEncrypter.Models;
 using Xamarin.Forms;
 using Xamarin.Essentials;
+using System.Threading.Tasks;
 
 namespace NotesEncrypter.ViewModels
 {
@@ -18,6 +19,7 @@ namespace NotesEncrypter.ViewModels
         public ICommand EncryptCommand { get; }
         public ICommand DecryptCommand { get; }
         public ICommand SettingsCommand { get; }
+        public ICommand ShareCommand { get; }
 
         public INavigation Navigation { get; set; }
 
@@ -54,6 +56,7 @@ namespace NotesEncrypter.ViewModels
             EncryptCommand = new Command(Encrypt);
             DecryptCommand = new Command(Decrypt);
             SettingsCommand = new Command(OpenSettings);
+            ShareCommand = new Command(ShareMessage);
         }
 
         public void ChangeSymbolTable(string name)
@@ -73,10 +76,18 @@ namespace NotesEncrypter.ViewModels
                 MessageText = encrypter.Decrypt(MessageText, KeyText);
         }
 
-
-        void ShareButtonHandler(object sender, System.EventArgs e)
+        void ShareMessage()
         {
+            _ = ShareMessageTask();
+        }
 
+        async Task ShareMessageTask()
+        {
+            await Share.RequestAsync(new ShareTextRequest
+            {
+                Text = MessageText,
+                Title = "Share Message"
+            });
         }
 
         void OpenSettings()
