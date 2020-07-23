@@ -21,7 +21,17 @@
         <Label Text="{x:Static resources:AppResources.EnterMessage}" HorizontalOptions="StartAndExpand" />
         <Entry Placeholder="{x:Static resources:AppResources.EnterText}" Text="{Binding MessageText, Mode=TwoWay}" />
         <Label Text="{x:Static resources:AppResources.EnterKey}" HorizontalOptions="StartAndExpand" />
-        <Entry Placeholder="{x:Static resources:AppResources.EnterText}"  Text="{Binding KeyText, Mode=TwoWay}" />
+        <Entry Placeholder="{x:Static resources:AppResources.EnterText}"  Text="{Binding KeyText, Mode=TwoWay}">
+            <Entry.Triggers>
+                <DataTrigger TargetType="Entry"
+                        Binding="{Binding Source={x:Reference hideKey}, Path=IsChecked}"
+                        Value="true">
+                    <Setter Property="IsPassword"
+                        Value="true" />
+                </DataTrigger>
+            </Entry.Triggers>
+        </Entry>
+        <StackLayout Orientation="Horizontal"> <CheckBox x:Name="hideKey"/> <Label Text="{x:Static resources:AppResources.HideKey}" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/> </StackLayout>
         <Button Text="{x:Static resources:AppResources.Encrypt}" Command="{Binding EncryptCommand}" HorizontalOptions="Fill" />
         <Button Text="{x:Static resources:AppResources.Decrypt}" Command="{Binding DecryptCommand}" HorizontalOptions="Fill" />
     </StackLayout>

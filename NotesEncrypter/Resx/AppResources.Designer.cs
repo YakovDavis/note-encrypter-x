@@ -100,5 +100,11 @@ namespace NotesEncrypter.Resx {
                 return ResourceManager.GetString("ShareMessage", resourceCulture);
             }
         }
+        
+        internal static string HideKey {
+            get {
+                return ResourceManager.GetString("HideKey", resourceCulture);
+            }
+        }
     }
 }

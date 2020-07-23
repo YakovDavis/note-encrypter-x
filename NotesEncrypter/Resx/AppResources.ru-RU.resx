@@ -39,4 +39,7 @@
     <data name="ShareMessage" xml:space="preserve">
         <value>Поделиться сообщением</value>
     </data>
+    <data name="Hide Key" xml:space="preserve">
+        <value>Скрыть ключ</value>
+    </data>
 </root>

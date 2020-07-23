@@ -39,4 +39,7 @@
     <data name="ShareMessage" xml:space="preserve">
         <value>Share message</value>
     </data>
+    <data name="HideKey" xml:space="preserve">
+        <value>Hide key</value>
+    </data>
 </root>
