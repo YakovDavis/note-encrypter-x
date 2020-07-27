@@ -106,5 +106,23 @@ namespace NotesEncrypter.Resx {
                 return ResourceManager.GetString("HideKey", resourceCulture);
             }
         }
+        
+        internal static string UsePresetKey {
+            get {
+                return ResourceManager.GetString("UsePresetKey", resourceCulture);
+            }
+        }
+        
+        internal static string PresetKey {
+            get {
+                return ResourceManager.GetString("PresetKey", resourceCulture);
+            }
+        }
+        
+        internal static string KeySettings {
+            get {
+                return ResourceManager.GetString("KeySettings", resourceCulture);
+            }
+        }
     }
 }

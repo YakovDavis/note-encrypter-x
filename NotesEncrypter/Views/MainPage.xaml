@@ -24,14 +24,20 @@
         <Entry Placeholder="{x:Static resources:AppResources.EnterText}"  Text="{Binding KeyText, Mode=TwoWay}">
             <Entry.Triggers>
                 <DataTrigger TargetType="Entry"
-                        Binding="{Binding Source={x:Reference hideKey}, Path=IsChecked}"
+                        Binding="{Binding HideKey}"
                         Value="true">
                     <Setter Property="IsPassword"
                         Value="true" />
                 </DataTrigger>
+                <DataTrigger TargetType="Entry"
+                        Binding="{Binding UsePresetKey}"
+                        Value="true">
+                    <Setter Property="IsEnabled"
+                        Value="false" />
+                </DataTrigger>
             </Entry.Triggers>
         </Entry>
-        <StackLayout Orientation="Horizontal"> <CheckBox x:Name="hideKey"/> <Label Text="{x:Static resources:AppResources.HideKey}" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/> </StackLayout>
+        <StackLayout Orientation="Horizontal"> <CheckBox IsChecked="{Binding HideKey, Mode=TwoWay}"/> <Label Text="{x:Static resources:AppResources.HideKey}" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/> </StackLayout>
         <Button Text="{x:Static resources:AppResources.Encrypt}" Command="{Binding EncryptCommand}" HorizontalOptions="Fill" />
         <Button Text="{x:Static resources:AppResources.Decrypt}" Command="{Binding DecryptCommand}" HorizontalOptions="Fill" />
     </StackLayout>

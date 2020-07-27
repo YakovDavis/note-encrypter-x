@@ -42,4 +42,13 @@
     <data name="Hide Key" xml:space="preserve">
         <value>Скрыть ключ</value>
     </data>
+    <data name="UsePresetKey" xml:space="preserve">
+        <value>Использовать заданный ключ</value>
+    </data>
+    <data name="PresetKey" xml:space="preserve">
+        <value>Заданный ключ</value>
+    </data>
+    <data name="KeySettings" xml:space="preserve">
+        <value>Настройки ключа</value>
+    </data>
 </root>

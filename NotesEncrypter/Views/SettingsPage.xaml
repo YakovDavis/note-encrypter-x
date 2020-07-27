@@ -16,16 +16,48 @@
                                <ColumnDefinition Width="*" />
                                <ColumnDefinition Width="*" />
                           </Grid.ColumnDefinitions>
+                          <Grid.RowDefinitions>
+                               <RowDefinition Height="50" />
+                          </Grid.RowDefinitions>
                           <Label Text="{x:Static resources:AppResources.SymbolTable}"
-                                  HorizontalOptions="Center"
+                                  HorizontalOptions="Start"
+                                  Padding="15"
                                   VerticalOptions="Center" />
                           <Picker Grid.Column="1"
-                                  ItemsSource="{Binding SymbolTableNames}"
-                                  SelectedItem="{Binding SelectedTable}"
+                                  ItemsSource="{Binding SymbolTableNames, Mode=OneWay}"
+                                  SelectedItem="{Binding SelectedTable, Mode=TwoWay}"
                                   Title="{x:Static resources:AppResources.SelectTable}"
-                                  HorizontalOptions="Center"
-                                  VerticalOptions="Center" >
+                                  VerticalOptions="Center"
+                                  HorizontalOptions="End" >
                           </Picker>
+                      </Grid>
+                  </ViewCell>
+              </TableSection>
+              <TableSection Title="{x:Static resources:AppResources.KeySettings}" >
+                  <SwitchCell Text="{x:Static resources:AppResources.UsePresetKey}" On="{Binding UsePresetKey, Mode=TwoWay}" />
+                  <ViewCell>
+                      <Grid>
+                          <Grid.ColumnDefinitions>
+                               <ColumnDefinition Width="*" />
+                               <ColumnDefinition Width="*" />
+                          </Grid.ColumnDefinitions>
+                          <Grid.RowDefinitions>
+                               <RowDefinition Height="50" />
+                          </Grid.RowDefinitions>
+                          <Label Text="{x:Static resources:AppResources.PresetKey}"
+                                  HorizontalOptions="Start"
+                                  Padding="15"
+                                  VerticalOptions="Center" />
+                          <Entry Grid.Column="1" HorizontalOptions="Fill" Text="{Binding PresetKey, Mode=TwoWay}" IsPassword="true">
+                              <Entry.Triggers>
+                                  <DataTrigger TargetType="Entry"
+                                      Binding="{Binding UsePresetKey, Mode=OneWay}"
+                                      Value="false">
+                                      <Setter Property="IsEnabled"
+                                          Value="false" />
+                                      </DataTrigger>
+                              </Entry.Triggers>
+                          </Entry>
                       </Grid>
                   </ViewCell>
               </TableSection>

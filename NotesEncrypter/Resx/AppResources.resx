@@ -42,4 +42,13 @@
     <data name="HideKey" xml:space="preserve">
         <value>Hide key</value>
     </data>
+    <data name="UsePresetKey" xml:space="preserve">
+        <value>Use preset key</value>
+    </data>
+    <data name="PresetKey" xml:space="preserve">
+        <value>Preset key</value>
+    </data>
+    <data name="KeySettings" xml:space="preserve">
+        <value>Key settings</value>
+    </data>
 </root>
