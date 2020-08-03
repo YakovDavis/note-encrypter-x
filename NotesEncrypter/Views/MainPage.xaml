@@ -3,42 +3,66 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              xmlns:resources="clr-namespace:NotesEncrypter.Resx"
              mc:Ignorable="d"
              x:Class="NotesEncrypter.Views.MainPage"
              Title="Message Encrypter">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Order="Primary"
-                     Priority="0"
-                     IconImageSource="share.png"
-                     Command="{Binding ShareCommand}" />
-        <ToolbarItem Order="Primary"
-                     Priority="1"
-                     IconImageSource="settings.png"
-                     Command="{Binding SettingsCommand}" />
-    </ContentPage.ToolbarItems>
-    <StackLayout Orientation="Vertical">
-        <Label Text="{x:Static resources:AppResources.EnterMessage}" HorizontalOptions="StartAndExpand" />
-        <Entry Placeholder="{x:Static resources:AppResources.EnterText}" Text="{Binding MessageText, Mode=TwoWay}" />
-        <Label Text="{x:Static resources:AppResources.EnterKey}" HorizontalOptions="StartAndExpand" />
-        <Entry Placeholder="{x:Static resources:AppResources.EnterText}"  Text="{Binding KeyText, Mode=TwoWay}">
-            <Entry.Triggers>
-                <DataTrigger TargetType="Entry"
-                        Binding="{Binding HideKey}"
-                        Value="true">
-                    <Setter Property="IsPassword"
-                        Value="true" />
-                </DataTrigger>
-                <DataTrigger TargetType="Entry"
-                        Binding="{Binding UsePresetKey}"
-                        Value="true">
-                    <Setter Property="IsEnabled"
-                        Value="false" />
-                </DataTrigger>
-            </Entry.Triggers>
-        </Entry>
-        <StackLayout Orientation="Horizontal"> <CheckBox IsChecked="{Binding HideKey, Mode=TwoWay}"/> <Label Text="{x:Static resources:AppResources.HideKey}" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/> </StackLayout>
-        <Button Text="{x:Static resources:AppResources.Encrypt}" Command="{Binding EncryptCommand}" HorizontalOptions="Fill" />
-        <Button Text="{x:Static resources:AppResources.Decrypt}" Command="{Binding DecryptCommand}" HorizontalOptions="Fill" />
-    </StackLayout>
+    <ScrollView>
+        <Grid
+            Margin="20,20,20,20"
+            RowDefinitions="auto,auto,auto"
+            ColumnDefinitions="*,*"
+            ColumnSpacing="30">
+            <pancake:PancakeView
+                Padding="0,0,0,10"
+                CornerRadius="10"
+                BackgroundColor="{StaticResource colorGray}">
+                <StackLayout>
+                    <Image
+                        Margin="10,10,10,0"
+                        HeightRequest="150"
+                        VerticalOptions="CenterAndExpand"
+                        Source="ceasar.png"/>
+                    <Label
+                        TextColor="{StaticResource colorBlack}"
+                        Margin="10,0"
+                        FontSize="18"
+                        HorizontalTextAlignment="Center"
+                        Text="Ceasar's cipher"/>
+                    <Label
+                        Margin="10,0"
+                        FontSize="16"
+                        HorizontalTextAlignment="Center"
+                        LineBreakMode="TailTruncation"
+                        Text="The Caesar cipher is named after Julius Caesar, who,"/>
+                </StackLayout>
+            </pancake:PancakeView>
+            <pancake:PancakeView
+                Grid.Column="1"
+                Padding="0,0,0,10"
+                CornerRadius="10"
+                BackgroundColor="{StaticResource colorGray}">
+                <StackLayout>
+                    <Image
+                        Margin="10,10,10,0"
+                        HeightRequest="150"
+                        VerticalOptions="CenterAndExpand"
+                        Source="vigenere.png"/>
+                    <Label
+                        TextColor="{StaticResource colorBlack}"
+                        Margin="10,0"
+                        FontSize="18"
+                        HorizontalTextAlignment="Center"
+                        Text="Vigenere's cipher"/>
+                    <Label
+                        Margin="10,0"
+                        FontSize="16"
+                        HorizontalTextAlignment="Center"
+                        LineBreakMode="TailTruncation"
+                        Text="The first well-documented description of a polyalphabetic cipher was by Leon Battista Alberti around 1467"/>
+                </StackLayout>
+            </pancake:PancakeView>
+        </Grid>
+    </ScrollView>
 </ContentPage>

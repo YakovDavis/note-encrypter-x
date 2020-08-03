@@ -5,11 +5,11 @@ using Xamarin.Essentials;
 
 namespace NotesEncrypter.ViewModels
 {
-    public class SettingsViewModel : BaseViewModel
+    public class VigenereSettingsViewModel : BaseViewModel
     {
         protected readonly List<string> symbolTableNames;
 
-        protected MainViewModel mainViewModel;
+        protected VigenereViewModel vigenereViewModel;
 
         protected string _selectedTable;
 
@@ -25,9 +25,9 @@ namespace NotesEncrypter.ViewModels
             {
                 _usePresetKey = value;
                 if ((!value) || (PresetKey == null))
-                    mainViewModel.SetPresetKey("");
+                    vigenereViewModel.SetPresetKey("");
                 else
-                    mainViewModel.SetPresetKey(PresetKey);
+                    vigenereViewModel.SetPresetKey(PresetKey);
                 Preferences.Set("use_preset_key", value);
                 OnPropertyChanged("UsePresetKey");
             }
@@ -41,9 +41,9 @@ namespace NotesEncrypter.ViewModels
             {
                 _presetKey = value;
                 if ((!UsePresetKey) || (value == null))
-                    mainViewModel.SetPresetKey("");
+                    vigenereViewModel.SetPresetKey("");
                 else
-                    mainViewModel.SetPresetKey(value);
+                    vigenereViewModel.SetPresetKey(value);
                 Preferences.Set("preset_key", value);
                 OnPropertyChanged("PresetKey");
             }
@@ -56,7 +56,7 @@ namespace NotesEncrypter.ViewModels
             set
             {
                 _selectedTable = value;
-                mainViewModel.ChangeSymbolTable(value);
+                vigenereViewModel.ChangeSymbolTable(value);
                 Preferences.Set("symbol_table", value);
                 OnPropertyChanged("SelectedTable");
             }
@@ -64,9 +64,9 @@ namespace NotesEncrypter.ViewModels
 
         public List<string> SymbolTableNames { get { return symbolTableNames; } }
 
-        public SettingsViewModel(MainViewModel _mainViewModel)
+        public VigenereSettingsViewModel(VigenereViewModel _vigenereViewModel)
         {
-            mainViewModel = _mainViewModel;
+            vigenereViewModel = _vigenereViewModel;
 
             symbolTableNames = new List<string>
             {

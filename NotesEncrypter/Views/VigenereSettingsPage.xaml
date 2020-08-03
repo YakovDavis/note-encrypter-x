@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:resources="clr-namespace:NotesEncrypter.Resx"
              mc:Ignorable="d"
-             x:Class="NotesEncrypter.Views.SettingsPage"
+             x:Class="NotesEncrypter.Views.VigenereSettingsPage"
              Title="Settings">
     <TableView Intent="Settings">
           <TableRoot>
