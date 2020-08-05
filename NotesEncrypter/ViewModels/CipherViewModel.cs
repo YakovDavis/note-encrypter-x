@@ -10,7 +10,7 @@ using NotesEncrypter.Resx;
 
 namespace NotesEncrypter.ViewModels
 {
-    public class VigenereViewModel : BaseViewModel
+    public class CipherViewModel : BaseViewModel
     {
         protected readonly Encrypter encrypter;
 
@@ -70,11 +70,11 @@ namespace NotesEncrypter.ViewModels
             }
         }
 
-        public VigenereViewModel(INavigation navigation)
+        public CipherViewModel(INavigation navigation)
         {
             Navigation = navigation;
 
-            encrypter = new Encrypter();
+            encrypter = new VigenereEncrypter();
             if (Preferences.ContainsKey("symbol_table"))
                 encrypter.SetSymbolTable(Preferences.Get("symbol_table", "Unicode"));
             else
@@ -149,7 +149,7 @@ namespace NotesEncrypter.ViewModels
 
         void OpenSettings()
         {
-            Navigation.PushAsync(new VigenereSettingsPage(this));
+            Navigation.PushAsync(new SettingsPage(this));
         }
     }
 }

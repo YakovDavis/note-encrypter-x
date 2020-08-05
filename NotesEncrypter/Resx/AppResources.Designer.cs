@@ -124,5 +124,35 @@ namespace NotesEncrypter.Resx {
                 return ResourceManager.GetString("KeySettings", resourceCulture);
             }
         }
+        
+        internal static string CiphersGallery {
+            get {
+                return ResourceManager.GetString("CiphersGallery", resourceCulture);
+            }
+        }
+        
+        internal static string VigeneresCipherName {
+            get {
+                return ResourceManager.GetString("VigeneresCipherName", resourceCulture);
+            }
+        }
+        
+        internal static string VigeneresCipherDescription {
+            get {
+                return ResourceManager.GetString("VigeneresCipherDescription", resourceCulture);
+            }
+        }
+        
+        internal static string CeasarCipherName {
+            get {
+                return ResourceManager.GetString("CeasarCipherName", resourceCulture);
+            }
+        }
+        
+        internal static string CeasarCipherDescription {
+            get {
+                return ResourceManager.GetString("CeasarCipherDescription", resourceCulture);
+            }
+        }
     }
 }

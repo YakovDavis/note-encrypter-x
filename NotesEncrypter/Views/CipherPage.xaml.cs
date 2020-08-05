@@ -4,12 +4,12 @@ using Xamarin.Forms;
 
 namespace NotesEncrypter.Views
 {
-    public partial class VigenerePage : ContentPage
+    public partial class CipherPage : ContentPage
     {
-        public VigenerePage()
+        public CipherPage()
         {
             InitializeComponent();
-            BindingContext = new VigenereViewModel(Navigation);
+            BindingContext = new CipherViewModel(Navigation);
             ;
         }
     }

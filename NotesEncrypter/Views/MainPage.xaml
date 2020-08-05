@@ -7,62 +7,54 @@
              xmlns:resources="clr-namespace:NotesEncrypter.Resx"
              mc:Ignorable="d"
              x:Class="NotesEncrypter.Views.MainPage"
-             Title="Message Encrypter">
+             Title="{x:Static resources:AppResources.CiphersGallery}">
     <ScrollView>
-        <Grid
+        <CollectionView
+            x:Name="listCiphers"
             Margin="20,20,20,20"
-            RowDefinitions="auto,auto,auto"
-            ColumnDefinitions="*,*"
-            ColumnSpacing="30">
-            <pancake:PancakeView
-                Padding="0,0,0,10"
-                CornerRadius="10"
-                BackgroundColor="{StaticResource colorGray}">
-                <StackLayout>
-                    <Image
-                        Margin="10,10,10,0"
-                        HeightRequest="150"
-                        VerticalOptions="CenterAndExpand"
-                        Source="ceasar.png"/>
-                    <Label
-                        TextColor="{StaticResource colorBlack}"
-                        Margin="10,0"
-                        FontSize="18"
-                        HorizontalTextAlignment="Center"
-                        Text="Ceasar's cipher"/>
-                    <Label
-                        Margin="10,0"
-                        FontSize="16"
-                        HorizontalTextAlignment="Center"
-                        LineBreakMode="TailTruncation"
-                        Text="The Caesar cipher is named after Julius Caesar, who,"/>
-                </StackLayout>
-            </pancake:PancakeView>
-            <pancake:PancakeView
-                Grid.Column="1"
-                Padding="0,0,0,10"
-                CornerRadius="10"
-                BackgroundColor="{StaticResource colorGray}">
-                <StackLayout>
-                    <Image
-                        Margin="10,10,10,0"
-                        HeightRequest="150"
-                        VerticalOptions="CenterAndExpand"
-                        Source="vigenere.png"/>
-                    <Label
-                        TextColor="{StaticResource colorBlack}"
-                        Margin="10,0"
-                        FontSize="18"
-                        HorizontalTextAlignment="Center"
-                        Text="Vigenere's cipher"/>
-                    <Label
-                        Margin="10,0"
-                        FontSize="16"
-                        HorizontalTextAlignment="Center"
-                        LineBreakMode="TailTruncation"
-                        Text="The first well-documented description of a polyalphabetic cipher was by Leon Battista Alberti around 1467"/>
-                </StackLayout>
-            </pancake:PancakeView>
-        </Grid>
+            ItemsSource="{Binding EncryptionMethods}"
+            VerticalScrollBarVisibility="Never">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout
+                    HorizontalItemSpacing="15"
+                    Orientation="Vertical"
+                    Span="2"
+                    VerticalItemSpacing="15"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <pancake:PancakeView
+                        Grid.Column="1"
+                        Padding="0,0,0,10"
+                        CornerRadius="10"
+                        BackgroundColor="{StaticResource colorGray}">
+                        <Grid
+                            RowDefinitions="auto,auto,auto"
+                            RowSpacing="0">
+                            <Image
+                                Grid.Row="0"
+                                Margin="10,10,10,0"
+                                HeightRequest="140"
+                                VerticalOptions="CenterAndExpand"
+                                Source="{Binding Image}"/>
+                            <Label
+                                Grid.Row="1"
+                                TextColor="{StaticResource colorBlack}"
+                                Margin="10,0"
+                                FontSize="18"
+                                HorizontalTextAlignment="Center"
+                                Text="{Binding Name}"/>
+                            <Label
+                                Grid.Row="2"
+                                Margin="10,0"
+                                FontSize="16"
+                                HorizontalTextAlignment="Center"
+                                LineBreakMode="TailTruncation"
+                                Text="{Binding Description}"/>
+                        </Grid>
+                    </pancake:PancakeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </ScrollView>
 </ContentPage>
