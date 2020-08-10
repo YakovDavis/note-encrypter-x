@@ -15,6 +15,7 @@ namespace NotesEncrypter.ViewModels
         protected readonly Encrypter encrypter;
 
         protected string _pageName;
+        protected string _cipherDescription;
 
         protected string _messageText;
         protected string _keyText;
@@ -82,9 +83,20 @@ namespace NotesEncrypter.ViewModels
             }
         }
 
+        public string CipherDescription
+        {
+            get { return _cipherDescription; }
+            protected set
+            {
+                _cipherDescription = value;
+                OnPropertyChanged("CipherDescription");
+            }
+        }
+
         public CipherViewModel(INavigation navigation, EncryptionMethod method)
         {
             PageName = method.GetName();
+            CipherDescription = method.GetDescription();
 
             Navigation = navigation;
 

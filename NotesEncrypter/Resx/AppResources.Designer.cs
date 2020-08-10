@@ -154,5 +154,11 @@ namespace NotesEncrypter.Resx {
                 return ResourceManager.GetString("CeasarCipherDescription", resourceCulture);
             }
         }
+        
+        internal static string AboutThisCipher {
+            get {
+                return ResourceManager.GetString("AboutThisCipher", resourceCulture);
+            }
+        }
     }
 }

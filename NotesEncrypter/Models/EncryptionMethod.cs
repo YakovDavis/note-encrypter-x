@@ -6,5 +6,7 @@ namespace NotesEncrypter.Models
         public abstract Encrypter GetEncrypter();
 
         public abstract string GetName();
+
+        public abstract string GetDescription();
     }
 }

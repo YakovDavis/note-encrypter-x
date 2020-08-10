@@ -7,6 +7,8 @@ namespace NotesEncrypter.Models
     {
         public override string GetName() => AppResources.CeasarCipherName;
 
+        public override string GetDescription() => AppResources.CeasarCipherDescription;
+
         public string Name { get { return AppResources.CeasarCipherName; } }
 
         public string Description { get { return AppResources.CeasarCipherDescription; } }
