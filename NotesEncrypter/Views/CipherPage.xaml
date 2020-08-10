@@ -6,7 +6,7 @@
              xmlns:resources="clr-namespace:NotesEncrypter.Resx"
              mc:Ignorable="d"
              x:Class="NotesEncrypter.Views.CipherPage"
-             Title="Vigenere's cipher">
+             Title="{Binding PageName}">
     <ContentPage.ToolbarItems>
         <ToolbarItem Order="Primary"
                      Priority="0"

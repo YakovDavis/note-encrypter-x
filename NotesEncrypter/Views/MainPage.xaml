@@ -52,6 +52,12 @@
                                 LineBreakMode="TailTruncation"
                                 Text="{Binding Description}"/>
                         </Grid>
+                        <pancake:PancakeView.GestureRecognizers>
+                            <TapGestureRecognizer
+                                    Command="{Binding Path=BindingContext.SelectCipherCommand, Source={x:Reference listCiphers}}"
+                                    CommandParameter="{Binding .}"
+                                    NumberOfTapsRequired="1" />
+                        </pancake:PancakeView.GestureRecognizers>
                     </pancake:PancakeView>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

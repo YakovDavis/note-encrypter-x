@@ -15,14 +15,27 @@ namespace NotesEncrypter.ViewModels
     {
         protected List<EncryptionMethod> encryptionMethods;
 
+        protected INavigation Navigation;
+
+        public ICommand SelectCipherCommand { get; }
+
         public List<EncryptionMethod> EncryptionMethods { get { return encryptionMethods; } }
 
         public MainViewModel(INavigation navigation)
         {
+            Navigation = navigation;
+
             encryptionMethods = new List<EncryptionMethod>();
 
             encryptionMethods.Add(new VigenereMethod());
             encryptionMethods.Add(new CeasarMethod());
+
+            SelectCipherCommand = new Command<EncryptionMethod>((param) => SelectCipher(param));
+        }
+
+        void SelectCipher(EncryptionMethod method)
+        {
+            Navigation.PushAsync(new CipherPage(method));
         }
     }
 }

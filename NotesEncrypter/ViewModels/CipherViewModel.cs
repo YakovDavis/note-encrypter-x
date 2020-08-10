@@ -14,6 +14,8 @@ namespace NotesEncrypter.ViewModels
     {
         protected readonly Encrypter encrypter;
 
+        protected string _pageName;
+
         protected string _messageText;
         protected string _keyText;
 
@@ -70,11 +72,23 @@ namespace NotesEncrypter.ViewModels
             }
         }
 
-        public CipherViewModel(INavigation navigation)
+        public string PageName
         {
+            get { return _pageName; }
+            protected set
+            {
+                _pageName = value;
+                OnPropertyChanged("PageName");
+            }
+        }
+
+        public CipherViewModel(INavigation navigation, EncryptionMethod method)
+        {
+            PageName = method.GetName();
+
             Navigation = navigation;
 
-            encrypter = new VigenereEncrypter();
+            encrypter = method.GetEncrypter();
             if (Preferences.ContainsKey("symbol_table"))
                 encrypter.SetSymbolTable(Preferences.Get("symbol_table", "Unicode"));
             else
